@@ -39323,31 +39323,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1055950048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8267662650462476120, guid: 43d2641ca57860741aca934a8919858e, type: 3}
-  m_PrefabInstance: {fileID: 8267662650090197944}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1055950055
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055950048}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0f789c3a06d3a924c89cf7af3a9f6a36, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &1162260556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3952619147754064985, guid: 398b299d8fb76fa4cae57d5129ebd36e, type: 3}
@@ -40365,6 +40340,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2626283998966848642, guid: 43d2641ca57860741aca934a8919858e, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626283998966848670, guid: 43d2641ca57860741aca934a8919858e, type: 3}
+      propertyPath: m_Height
+      value: 2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626283998966848670, guid: 43d2641ca57860741aca934a8919858e, type: 3}
+      propertyPath: m_Radius
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626283998966848670, guid: 43d2641ca57860741aca934a8919858e, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8267662650462476120, guid: 43d2641ca57860741aca934a8919858e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -40456,7 +40447,8 @@ PrefabInstance:
     - target: {fileID: 8267662650462476126, guid: 43d2641ca57860741aca934a8919858e, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1055950055}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8267662650462476122, guid: 43d2641ca57860741aca934a8919858e, type: 3}
+    - {fileID: 2626283998966848671, guid: 43d2641ca57860741aca934a8919858e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43d2641ca57860741aca934a8919858e, type: 3}
