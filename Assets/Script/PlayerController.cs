@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController controller;
 
-    //public Animator animator;
+    public Animator animator;
 
     float speedZ;
     float speedX;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     Vector3 relativeVector;
 
     public float velocityY;
-    public float groundedGravity = -.5f;
+    public float groundedGravity = 0    ;
     public float gravityMultiplier = 2;
     public float gravity = 9.81f;
 
@@ -84,7 +84,8 @@ public class PlayerController : MonoBehaviour
 
         if (Direction.magnitude >= 0.1f)
         {
-            print(speedZ);
+            animator.SetFloat("Horizontal", Forward); 
+            animator.SetFloat("Horizontal", Side);
             controller.Move(relativeVector * _Speed * Time.deltaTime);
         }
     }
@@ -98,7 +99,10 @@ public class PlayerController : MonoBehaviour
     public void HandleGravityAndJump()
     {
         if (controller.isGrounded && velocityY < 0f)
+        {
             velocityY = groundedGravity;
+            animator.SetFloat("Vertical", velocityY);
+        }
         
         velocityY -= gravity * gravityMultiplier * Time.deltaTime;
         controller.Move(Vector3.up * velocityY * Time.deltaTime);
