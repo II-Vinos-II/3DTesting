@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
         if(transform.position.y > 1.1f && !controller.isGrounded)
         {
-            animator.Play("Fall");
+            animator.Play("Fall ");
             isLanded = false;
         }
         if (transform.position.y < 1.1f && controller.isGrounded && !isLanded)
