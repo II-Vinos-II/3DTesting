@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool canMove;
 
     public CharacterController controller;
 
@@ -56,8 +57,14 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+
         print(controller.isGrounded);
 
         if(transform.position.y > 1.1f && !controller.isGrounded)
@@ -69,8 +76,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.Play("Landing");
             isLanded = true;
+            StartCoroutine(WaitForMoving());
         }
 
+        speedX *= Direction.x * 5;
+        speedZ *= Direction.z * 5;
 
         GatherInput();
         ApplyMovement();
@@ -87,6 +97,8 @@ public class PlayerController : MonoBehaviour
     }
     private void ApplyMovement()
     {
+        if (canMove)
+        {
             speedX = (Forward);
             speedZ = (Side);
             
@@ -114,6 +126,8 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("Horizontal", 0);
                 animator.SetFloat("Vertical", 0);
             }
+
+        }
           
     }
 
@@ -130,5 +144,12 @@ public class PlayerController : MonoBehaviour
 
         velocityY -= gravity * gravityMultiplier * Time.deltaTime;
         controller.Move(Vector3.up * velocityY * Time.deltaTime);
+    }
+
+    public IEnumerator WaitForMoving()
+    {
+        canMove = false;
+        yield return new WaitForSeconds(2);
+        canMove = true;
     }
 }
