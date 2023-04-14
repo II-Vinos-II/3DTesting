@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         // handle continuing to the next Line in the dialogue when submit is pressed
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
             ContinueStory();
         }
@@ -108,16 +108,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ContinueStory()
     {
-        if (currentStory.canContinue)
-        {
-            dialogueText.text = currentStory.Continue();
-            DisplayChoices();
-            HandleTags(currentStory.currentTags);
-        }
-        else
-        {
-            ExitDialogueMode();
-        }
+        StartCoroutine(WaitToContinue());
     }
     private void HandleTags(List<string> currentTags)
     {
@@ -196,5 +187,20 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Ink Variable was found to be null: " + variableName);
         }
         return variableValue;
+    }
+
+    IEnumerator WaitToContinue()
+    {
+        if (currentStory.canContinue)
+        {
+            dialogueText.text = currentStory.Continue();
+            DisplayChoices();
+            HandleTags(currentStory.currentTags);
+        }
+        else
+        {
+            ExitDialogueMode();
+        }
+        yield return new WaitForSeconds(.5f);
     }
 }

@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b21c5a79ededa6c48b45e1d29446aae9, type: 3}
       propertyPath: m_Name
-      value: claptrap
+      value: claptrap Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b21c5a79ededa6c48b45e1d29446aae9, type: 3}
@@ -130,26 +130,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &595678648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4613057524111112731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5922d09879665614db326e2309f837bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 595678649}
-  _Speed: 5
-  rotateSpeed: 200
-  turnSmoothTime: 0.1
-  turnSmootheVelocity: 0.38
-  cam: {fileID: 0}
-  velocityY: 0
-  groundedGravity: -0.5
-  gravityMultiplier: 2
-  gravity: 9.81
-  status: 0

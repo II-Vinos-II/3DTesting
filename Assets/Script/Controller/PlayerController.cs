@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    
     public bool canMove;
 
     public CharacterController controller;
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
 
         print(controller.isGrounded);
 
